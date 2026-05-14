@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">点击间隔约束示意</title>
+  <desc id="desc">侧键按住期间，固件生成 50 到 65 毫秒范围内、均值约 55 毫秒的近似正态分布点击间隔；硬件只负责执行按下和松开。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; }
+      .h { font: 700 24px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .t { font: 500 20px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .s { font: 500 17px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #1f2937; stroke-width: 3; rx: 14; }
+      .axis { stroke: #334155; stroke-width: 3; fill: none; }
+      .grid { stroke: #cbd5e1; stroke-width: 2; fill: none; stroke-dasharray: 5 7; }
+      .curve { stroke: #2563eb; stroke-width: 5; fill: rgba(37,99,235,0.14); }
+      .limit { stroke: #dc2626; stroke-width: 4; fill: none; stroke-dasharray: 8 8; }
+      .mean { stroke: #16a34a; stroke-width: 4; fill: none; }
+      .pulse { stroke: #ea580c; stroke-width: 5; fill: none; }
+      .note { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .ok { fill: #ecfdf5; stroke: #16a34a; stroke-width: 2; rx: 12; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1400" height="720"/>
+  <text class="title" x="700" y="58" text-anchor="middle">点击间隔要求：固件控制，硬件快速响应</text>
+
+  <rect class="box" x="80" y="125" width="560" height="430"/>
+  <text class="h" x="360" y="170" text-anchor="middle">间隔分布目标</text>
+  <path class="axis" d="M160 470 H565" marker-end="url(#arrow)"/>
+  <path class="axis" d="M160 470 V230" marker-end="url(#arrow)"/>
+  <path class="grid" d="M250 470 V250"/>
+  <path class="grid" d="M340 470 V250"/>
+  <path class="grid" d="M475 470 V250"/>
+  <path class="limit" d="M250 470 V240"/>
+  <path class="mean" d="M340 470 V230"/>
+  <path class="limit" d="M475 470 V240"/>
+  <path class="curve" d="M250 468 C275 420 300 300 340 260 C385 305 430 410 475 468 Z"/>
+  <text class="s" x="250" y="505" text-anchor="middle">50 ms</text>
+  <text class="s" x="340" y="505" text-anchor="middle">55 ms 均值</text>
+  <text class="s" x="475" y="505" text-anchor="middle">65 ms</text>
+  <text class="s" x="570" y="505" text-anchor="end">点击间隔</text>
+  <text class="s" x="145" y="245" text-anchor="end">概率</text>
+
+  <rect class="box" x="760" y="125" width="560" height="430"/>
+  <text class="h" x="1040" y="170" text-anchor="middle">一次点击脉冲</text>
+  <path class="axis" d="M830 470 H1255" marker-end="url(#arrow)"/>
+  <path class="axis" d="M830 470 V245" marker-end="url(#arrow)"/>
+  <text class="s" x="815" y="285" text-anchor="end">按下</text>
+  <text class="s" x="815" y="468" text-anchor="end">松开</text>
+  <path class="pulse" d="M860 470 H930 V280 H1040 V470 H1125 V280 H1235 V470"/>
+  <text class="s" x="985" y="255" text-anchor="middle">按下保持 15~25 ms</text>
+  <path class="grid" d="M1040 470 V250"/>
+  <path class="grid" d="M1125 470 V250"/>
+  <text class="s" x="1082" y="505" text-anchor="middle">下一次间隔 50~65 ms</text>
+
+  <rect class="note" x="140" y="590" width="500" height="74"/>
+  <text class="t" x="390" y="622" text-anchor="middle">硬件只负责把 GPIO5 的高/低电平转换为左键按下/松开</text>
+  <text class="s" x="390" y="648" text-anchor="middle">PC817 响应远小于 1 ms，不决定 55 ms 分布。</text>
+
+  <rect class="ok" x="760" y="590" width="500" height="74"/>
+  <text class="t" x="1010" y="622" text-anchor="middle">随机间隔由 ESP32 定时器和固件算法产生</text>
+  <text class="s" x="1010" y="648" text-anchor="middle">范围裁剪到 50~65 ms，均值约 55 ms。</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" role="img" aria-labelledby="title desc">
+  <title id="title">左键微动与 PC817 输出并联原理</title>
+  <desc id="desc">鼠标 MCU 输入由上拉电阻保持高电平，物理左键或 PC817 输出任意一个导通都会把左键信号线拉到 GND。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; }
+      .h { font: 700 25px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .t { font: 500 20px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .s { font: 500 17px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #1f2937; stroke-width: 3; rx: 14; }
+      .smallbox { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 2; rx: 10; }
+      .ok { fill: #ecfdf5; stroke: #16a34a; stroke-width: 2; rx: 10; }
+      .wire { stroke: #1f2937; stroke-width: 5; fill: none; }
+      .signal { stroke: #16a34a; stroke-width: 6; fill: none; }
+      .pull { stroke: #2563eb; stroke-width: 5; fill: none; }
+      .drive { stroke: #ea580c; stroke-width: 5; fill: none; }
+      .node { fill: #16a34a; stroke: #ffffff; stroke-width: 2; }
+      .gnd { fill: #1f2937; }
+      .res { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 8; }
+    </style>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="880"/>
+  <text class="title" x="700" y="58" text-anchor="middle">原理：PC817 输出侧并联在左键微动上</text>
+
+  <rect class="box" x="70" y="155" width="340" height="185"/>
+  <text class="h" x="240" y="205" text-anchor="middle">鼠标 MCU</text>
+  <text class="t" x="240" y="252" text-anchor="middle">左键输入引脚</text>
+  <text class="s" x="240" y="285" text-anchor="middle">检测信号线是高电平还是 0V</text>
+
+  <path class="signal" d="M410 250 H700" marker-end="url(#arrow-green)"/>
+  <circle class="node" cx="700" cy="250" r="10"/>
+  <text class="t" x="555" y="227" text-anchor="middle">左键信号线</text>
+
+  <path class="pull" d="M700 250 V125"/>
+  <rect class="res" x="640" y="120" width="120" height="58"/>
+  <text class="t" x="700" y="144" text-anchor="middle">上拉</text>
+  <text class="s" x="700" y="167" text-anchor="middle">内部/外部</text>
+  <path class="pull" d="M700 120 V85" marker-end="url(#arrow-blue)"/>
+  <text class="t" x="700" y="82" text-anchor="middle">3.3V 或 5V</text>
+
+  <path class="signal" d="M700 250 H1130"/>
+  <path class="wire" d="M820 250 V430"/>
+  <rect class="smallbox" x="700" y="430" width="240" height="95"/>
+  <text class="h" x="820" y="466" text-anchor="middle">原左键微动</text>
+  <text class="s" x="820" y="496" text-anchor="middle">人手按下时闭合</text>
+  <path class="wire" d="M820 525 V625"/>
+
+  <path class="wire" d="M1060 250 V430"/>
+  <rect class="smallbox" x="940" y="430" width="240" height="95"/>
+  <text class="h" x="1060" y="466" text-anchor="middle">PC817 输出侧</text>
+  <text class="s" x="1060" y="496" text-anchor="middle">ESP32 触发时导通</text>
+  <path class="wire" d="M1060 525 V625"/>
+
+  <path class="wire" d="M820 625 H1060"/>
+  <path class="wire" d="M940 625 V700"/>
+  <path class="wire" d="M900 700 H980"/>
+  <path class="wire" d="M915 720 H965"/>
+  <path class="wire" d="M932 740 H948"/>
+  <text class="t" x="1015" y="710">GND</text>
+
+  <rect class="box" x="70" y="500" width="430" height="160"/>
+  <text class="h" x="285" y="545" text-anchor="middle">状态解释</text>
+  <text class="t" x="110" y="585">未按下：信号线被上拉为高电平</text>
+  <text class="t" x="110" y="620">按下左键：微动把信号线拉到 GND</text>
+  <text class="t" x="110" y="655">ESP32 触发：PC817 把信号线拉到 GND</text>
+
+  <rect class="ok" x="585" y="740" width="680" height="82"/>
+  <text class="t" x="925" y="774" text-anchor="middle">两条路径是并联关系：任何一条闭合都等效为左键按下</text>
+  <text class="s" x="925" y="802" text-anchor="middle">因此原左键正常保留，ESP32 只是额外提供一个电子开关。</text>
+
+  <path class="drive" d="M1130 500 C1250 500 1280 420 1280 340" marker-end="url(#arrow-orange)"/>
+  <text class="t" x="1250" y="520" text-anchor="middle">GPIO5 控制</text>
+</svg>

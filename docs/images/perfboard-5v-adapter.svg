@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="780" viewBox="0 0 1300 780" role="img" aria-labelledby="title desc">
+  <title id="title">5V 侧键信号时洞洞板输入替换方式</title>
+  <desc id="desc">如果侧键信号未按下为 5V，原来的 47k 串联输入改成 220k 加 330k 分压，分压节点进入 GPIO4。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; }
+      .h { font: 700 24px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .t { font: 500 20px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .s { font: 500 17px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #1f2937; stroke-width: 3; rx: 16; }
+      .res { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 8; }
+      .node { fill: #2563eb; stroke: #ffffff; stroke-width: 2; }
+      .gndnode { fill: #111827; stroke: #ffffff; stroke-width: 2; }
+      .wire-side { stroke: #2563eb; stroke-width: 5; fill: none; }
+      .wire-gnd { stroke: #111827; stroke-width: 5; fill: none; }
+      .bad { fill: #fef2f2; stroke: #dc2626; stroke-width: 2; rx: 12; }
+      .good { fill: #ecfdf5; stroke: #16a34a; stroke-width: 2; rx: 12; }
+    </style>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1300" height="780"/>
+  <text class="title" x="650" y="58" text-anchor="middle">如果侧键信号是 5V：只替换 GPIO4 输入部分</text>
+
+  <rect class="box" x="70" y="140" width="480" height="420"/>
+  <text class="h" x="310" y="190" text-anchor="middle">3.3V 侧键信号</text>
+  <text class="s" x="310" y="222" text-anchor="middle">直接使用 47k 串联输入</text>
+  <path class="wire-side" d="M145 340 H245"/>
+  <rect class="res" x="245" y="310" width="130" height="60"/>
+  <text class="t" x="310" y="334" text-anchor="middle">R1</text>
+  <text class="s" x="310" y="358" text-anchor="middle">47k</text>
+  <path class="wire-side" d="M375 340 H475" marker-end="url(#arrow-blue)"/>
+  <text class="t" x="145" y="315" text-anchor="middle">SIDE</text>
+  <text class="t" x="475" y="315" text-anchor="middle">GPIO4</text>
+
+  <rect class="box" x="750" y="140" width="480" height="420"/>
+  <text class="h" x="990" y="190" text-anchor="middle">5V 侧键信号</text>
+  <text class="s" x="990" y="222" text-anchor="middle">改为 220k + 330k 分压</text>
+  <path class="wire-side" d="M825 340 H925"/>
+  <rect class="res" x="925" y="310" width="130" height="60"/>
+  <text class="t" x="990" y="334" text-anchor="middle">R4</text>
+  <text class="s" x="990" y="358" text-anchor="middle">220k</text>
+  <path class="wire-side" d="M1055 340 H1155" marker-end="url(#arrow-blue)"/>
+  <circle class="node" cx="1080" cy="340" r="10"/>
+  <path class="wire-gnd" d="M1080 340 V435"/>
+  <rect class="res" x="1015" y="435" width="130" height="60"/>
+  <text class="t" x="1080" y="459" text-anchor="middle">R5</text>
+  <text class="s" x="1080" y="483" text-anchor="middle">330k</text>
+  <path class="wire-gnd" d="M1080 495 V545" marker-end="url(#arrow-black)"/>
+  <text class="t" x="825" y="315" text-anchor="middle">SIDE</text>
+  <text class="t" x="1155" y="315" text-anchor="middle">GPIO4</text>
+  <text class="t" x="1080" y="575" text-anchor="middle">GND</text>
+
+  <rect class="good" x="150" y="620" width="410" height="88"/>
+  <text class="t" x="355" y="654" text-anchor="middle">侧键未按下约 3.3V 时用左边</text>
+  <text class="s" x="355" y="682" text-anchor="middle">R1 = 47k，简单可靠。</text>
+
+  <rect class="bad" x="740" y="620" width="410" height="88"/>
+  <text class="t" x="945" y="654" text-anchor="middle">侧键未按下约 5V 时用右边</text>
+  <text class="s" x="945" y="682" text-anchor="middle">不要把 5V 直接接入 ESP32-S3 GPIO。</text>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">3.3V 侧键信号版本标准接线图</title>
+  <desc id="desc">侧键信号通过 47k 电阻接 ESP32 GPIO4，GPIO5 经 470 欧姆驱动 PC817，PC817 输出侧并联到左键和鼠标 GND。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .box { fill: #ffffff; stroke: #1f2937; stroke-width: 3; rx: 16; }
+      .sub { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 2; rx: 10; }
+      .chip { fill: #eef2ff; stroke: #4338ca; stroke-width: 3; rx: 12; }
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; }
+      .h { font: 700 24px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .t { font: 500 19px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .s { font: 500 16px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #475569; }
+      .pinText { font: 700 16px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #ffffff; }
+      .wire-gnd { stroke: #111827; stroke-width: 5; fill: none; }
+      .wire-side { stroke: #2563eb; stroke-width: 5; fill: none; }
+      .wire-left { stroke: #16a34a; stroke-width: 5; fill: none; }
+      .wire-drive { stroke: #ea580c; stroke-width: 5; fill: none; }
+      .wire-note { stroke: #dc2626; stroke-width: 4; fill: none; stroke-dasharray: 10 8; }
+      .node { stroke: #ffffff; stroke-width: 2; }
+      .gnd { fill: #111827; }
+      .side { fill: #2563eb; }
+      .left { fill: #16a34a; }
+      .drive { fill: #ea580c; }
+      .res { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 8; }
+      .note { fill: #ecfdf5; stroke: #16a34a; stroke-width: 2; rx: 10; }
+      .warn { fill: #fef2f2; stroke: #dc2626; stroke-width: 2; rx: 10; }
+    </style>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="980"/>
+  <text class="title" x="750" y="58" text-anchor="middle">标准接线图：侧键信号为 3.3V 时</text>
+  <text class="s" x="750" y="90" text-anchor="middle">适用测量结果：侧键未按下约 3.3V，按下约 0V；左键未按下约 3.3V，按下约 0V。</text>
+
+  <rect class="box" x="60" y="140" width="470" height="650"/>
+  <text class="h" x="295" y="183" text-anchor="middle">G102 鼠标 PCB</text>
+  <rect class="sub" x="115" y="240" width="360" height="95"/>
+  <text class="t" x="295" y="276" text-anchor="middle">侧键微动</text>
+  <text class="s" x="295" y="304" text-anchor="middle">信号端：未按下 3.3V，按下 0V</text>
+  <rect class="sub" x="115" y="435" width="360" height="95"/>
+  <text class="t" x="295" y="471" text-anchor="middle">左键微动</text>
+  <text class="s" x="295" y="499" text-anchor="middle">原左键保留，PC817 与它并联</text>
+  <rect class="sub" x="115" y="650" width="360" height="70"/>
+  <text class="t" x="295" y="693" text-anchor="middle">鼠标 GND</text>
+
+  <rect class="box" x="930" y="140" width="480" height="650"/>
+  <text class="h" x="1170" y="183" text-anchor="middle">ESP32-S3 开发板</text>
+  <rect class="sub" x="985" y="245" width="365" height="70"/>
+  <text class="t" x="1168" y="288" text-anchor="middle">GPIO4 输入：侧键检测</text>
+  <rect class="sub" x="985" y="425" width="365" height="70"/>
+  <text class="t" x="1168" y="468" text-anchor="middle">GPIO5 输出：左键模拟</text>
+  <rect class="sub" x="985" y="640" width="365" height="70"/>
+  <text class="t" x="1168" y="683" text-anchor="middle">ESP32 GND</text>
+
+  <rect class="chip" x="645" y="435" width="180" height="210"/>
+  <path d="M675 470 L675 610" stroke="#4338ca" stroke-width="3"/>
+  <path d="M795 470 L795 610" stroke="#4338ca" stroke-width="3"/>
+  <circle cx="675" cy="495" r="7" fill="#4338ca"/>
+  <circle cx="675" cy="585" r="7" fill="#4338ca"/>
+  <circle cx="795" cy="495" r="7" fill="#4338ca"/>
+  <circle cx="795" cy="585" r="7" fill="#4338ca"/>
+  <text class="h" x="735" y="468" text-anchor="middle">PC817</text>
+  <text class="s" x="735" y="500" text-anchor="middle">输入 LED</text>
+  <text class="s" x="735" y="590" text-anchor="middle">输出三极管</text>
+  <text class="pinText" x="657" y="500" text-anchor="middle">1</text>
+  <text class="pinText" x="657" y="590" text-anchor="middle">2</text>
+  <text class="pinText" x="813" y="500" text-anchor="middle">4</text>
+  <text class="pinText" x="813" y="590" text-anchor="middle">3</text>
+
+  <circle class="node side" cx="475" cy="287" r="9"/>
+  <path class="wire-side" d="M475 287 H595"/>
+  <rect class="res" x="595" y="257" width="115" height="60"/>
+  <text class="t" x="652" y="281" text-anchor="middle">R1</text>
+  <text class="s" x="652" y="305" text-anchor="middle">47k</text>
+  <path class="wire-side" d="M710 287 H985" marker-end="url(#arrow-blue)"/>
+  <text class="s" x="720" y="247">侧键信号线：高阻读取，不主动驱动鼠标</text>
+
+  <circle class="node drive" cx="985" cy="460" r="9"/>
+  <path class="wire-drive" d="M985 460 H880"/>
+  <rect class="res" x="765" y="430" width="115" height="60"/>
+  <text class="t" x="822" y="454" text-anchor="middle">R2</text>
+  <text class="s" x="822" y="478" text-anchor="middle">470R</text>
+  <path class="wire-drive" d="M765 460 H675 V495" marker-end="url(#arrow-orange)"/>
+  <text class="s" x="860" y="414" text-anchor="middle">GPIO5 高电平时点亮 PC817 输入 LED</text>
+
+  <path class="wire-gnd" d="M985 675 H915 V710"/>
+  <rect class="res" x="830" y="710" width="115" height="60"/>
+  <text class="t" x="887" y="734" text-anchor="middle">R3</text>
+  <text class="s" x="887" y="758" text-anchor="middle">100k</text>
+  <path class="wire-drive" d="M985 460 V740 H945"/>
+  <text class="s" x="1168" y="750" text-anchor="middle">GPIO5 下拉，避免上电误触发</text>
+
+  <path class="wire-gnd" d="M985 675 H675 V585" marker-end="url(#arrow-black)"/>
+  <circle class="node gnd" cx="475" cy="685" r="9"/>
+  <path class="wire-gnd" d="M475 685 H985" marker-end="url(#arrow-black)"/>
+  <text class="s" x="735" y="705" text-anchor="middle">鼠标 GND 与 ESP32 GND 共地</text>
+
+  <circle class="node left" cx="475" cy="482" r="9"/>
+  <path class="wire-left" d="M475 482 H795 V495" marker-end="url(#arrow-green)"/>
+  <text class="s" x="605" y="455">左键信号线接 PC817 4脚</text>
+  <path class="wire-gnd" d="M795 585 V685 H475" marker-end="url(#arrow-black)"/>
+  <text class="s" x="840" y="622">PC817 3脚接鼠标 GND</text>
+
+  <rect class="warn" x="575" y="815" width="350" height="92"/>
+  <text class="t" x="750" y="852" text-anchor="middle">不要连接鼠标 USB 5V 到 ESP32</text>
+  <text class="s" x="750" y="880" text-anchor="middle">本图只需要 GND、侧键信号、左键信号三根鼠标引线</text>
+</svg>

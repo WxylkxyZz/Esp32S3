@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" role="img" aria-labelledby="title desc">
+  <title id="title">万用表查找鼠标按键信号线示意图</title>
+  <desc id="desc">黑表笔接鼠标 GND，红表笔测微动焊点，寻找未按下高电平、按下 0V 的信号端。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; }
+      .h { font: 700 25px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .t { font: 500 20px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .s { font: 500 17px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #475569; }
+      .pcb { fill: #e7f5ec; stroke: #15803d; stroke-width: 4; rx: 22; }
+      .pad { fill: #fbbf24; stroke: #92400e; stroke-width: 3; }
+      .gndpad { fill: #111827; stroke: #ffffff; stroke-width: 2; }
+      .switch { fill: #ffffff; stroke: #334155; stroke-width: 3; rx: 12; }
+      .meter { fill: #111827; stroke: #020617; stroke-width: 4; rx: 22; }
+      .screen { fill: #d1fae5; stroke: #065f46; stroke-width: 3; rx: 10; }
+      .white { font: 700 25px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #ffffff; }
+      .whiteSmall { font: 500 17px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #ffffff; }
+      .red { stroke: #dc2626; stroke-width: 5; fill: none; }
+      .black { stroke: #111827; stroke-width: 5; fill: none; }
+      .bluebox { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .warn { fill: #fff7ed; stroke: #f97316; stroke-width: 2; rx: 12; }
+      .ok { fill: #ecfdf5; stroke: #16a34a; stroke-width: 2; rx: 12; }
+    </style>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="880"/>
+  <text class="title" x="700" y="58" text-anchor="middle">万用表确认：找出侧键/左键的信号端</text>
+
+  <rect class="pcb" x="90" y="150" width="760" height="520"/>
+  <text class="h" x="470" y="195" text-anchor="middle">G102 鼠标 PCB 局部示意</text>
+
+  <rect class="switch" x="180" y="280" width="250" height="130"/>
+  <text class="h" x="305" y="322" text-anchor="middle">左键微动</text>
+  <circle class="pad" cx="220" cy="380" r="18"/>
+  <circle class="pad" cx="305" cy="380" r="18"/>
+  <circle class="gndpad" cx="390" cy="380" r="18"/>
+  <text class="s" x="220" y="425" text-anchor="middle">可能信号</text>
+  <text class="s" x="305" y="425" text-anchor="middle">可能信号</text>
+  <text class="s" x="390" y="425" text-anchor="middle">GND</text>
+
+  <rect class="switch" x="500" y="280" width="250" height="130"/>
+  <text class="h" x="625" y="322" text-anchor="middle">侧键微动</text>
+  <circle class="pad" cx="540" cy="380" r="18"/>
+  <circle class="pad" cx="625" cy="380" r="18"/>
+  <circle class="gndpad" cx="710" cy="380" r="18"/>
+  <text class="s" x="540" y="425" text-anchor="middle">可能信号</text>
+  <text class="s" x="625" y="425" text-anchor="middle">可能信号</text>
+  <text class="s" x="710" y="425" text-anchor="middle">GND</text>
+
+  <rect class="switch" x="305" y="520" width="330" height="72"/>
+  <text class="h" x="470" y="565" text-anchor="middle">鼠标 USB 黑线 / PCB 大面积地线 = GND</text>
+  <circle class="gndpad" cx="685" cy="556" r="16"/>
+
+  <rect class="meter" x="950" y="205" width="310" height="430"/>
+  <text class="white" x="1105" y="250" text-anchor="middle">万用表</text>
+  <rect class="screen" x="1000" y="285" width="210" height="92"/>
+  <text class="h" x="1105" y="325" text-anchor="middle">DC V</text>
+  <text class="t" x="1105" y="355" text-anchor="middle">3.3V / 5V / 0V</text>
+  <circle cx="1035" cy="560" r="20" fill="#dc2626"/>
+  <circle cx="1175" cy="560" r="20" fill="#020617" stroke="#ffffff" stroke-width="2"/>
+  <text class="whiteSmall" x="1035" y="605" text-anchor="middle">红表笔</text>
+  <text class="whiteSmall" x="1175" y="605" text-anchor="middle">黑表笔</text>
+
+  <path class="red" d="M1035 560 C910 455 760 405 625 380" marker-end="url(#arrow-red)"/>
+  <path class="black" d="M1175 560 C970 690 800 590 685 556" marker-end="url(#arrow-black)"/>
+
+  <rect class="bluebox" x="90" y="715" width="380" height="105"/>
+  <text class="h" x="280" y="754" text-anchor="middle">判断信号端</text>
+  <text class="t" x="125" y="790">未按下：约 3.3V 或 5V</text>
+  <text class="t" x="125" y="818">按下：约 0V</text>
+
+  <rect class="warn" x="510" y="715" width="390" height="105"/>
+  <text class="h" x="705" y="754" text-anchor="middle">判断 GND 端</text>
+  <text class="t" x="545" y="790">无论按不按都接近 0V</text>
+  <text class="t" x="545" y="818">蜂鸣档与 USB GND 连通</text>
+
+  <rect class="ok" x="940" y="715" width="360" height="105"/>
+  <text class="h" x="1120" y="754" text-anchor="middle">选用接线版本</text>
+  <text class="t" x="975" y="790">3.3V：用 47k 串入 GPIO4</text>
+  <text class="t" x="975" y="818">5V：用 220k + 330k 分压</text>
+</svg>

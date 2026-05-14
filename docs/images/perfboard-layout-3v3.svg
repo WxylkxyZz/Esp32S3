@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1100" viewBox="0 0 1500 1100" role="img" aria-labelledby="title desc">
+  <title id="title">3.3V 版本洞洞板顶视图布局示例</title>
+  <desc id="desc">使用 2.54mm 独立焊盘洞洞板，PC817 放在中间，左侧接鼠标三根线，右侧接 ESP32 三根线。R1 为 47k，R2 为 470R，R3 为 100k。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; }
+      .h { font: 700 24px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .t { font: 500 19px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .s { font: 500 16px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #475569; }
+      .board { fill: #e7f5ec; stroke: #15803d; stroke-width: 4; rx: 18; }
+      .hole { fill: #f8fafc; stroke: #15803d; stroke-width: 2; }
+      .pad { fill: #fbbf24; stroke: #92400e; stroke-width: 2; }
+      .chip { fill: #eef2ff; stroke: #4338ca; stroke-width: 3; rx: 10; }
+      .pin { fill: #4338ca; stroke: #ffffff; stroke-width: 2; }
+      .pinLabel { font: 700 16px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #ffffff; }
+      .res { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 8; }
+      .wire-gnd { stroke: #111827; stroke-width: 5; fill: none; }
+      .wire-side { stroke: #2563eb; stroke-width: 5; fill: none; }
+      .wire-left { stroke: #16a34a; stroke-width: 5; fill: none; }
+      .wire-drive { stroke: #ea580c; stroke-width: 5; fill: none; }
+      .legend { fill: #ffffff; stroke: #94a3b8; stroke-width: 2; rx: 12; }
+      .gnd { fill: #111827; }
+      .side { fill: #2563eb; }
+      .left { fill: #16a34a; }
+      .drive { fill: #ea580c; }
+      .note { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="1100"/>
+  <text class="title" x="750" y="58" text-anchor="middle">洞洞板布局示例：3.3V 侧键信号版本</text>
+  <text class="s" x="750" y="92" text-anchor="middle">视角：元件面顶视图。焊接时可在背面用焊锡桥或短导线按相同颜色连通。</text>
+
+  <rect class="board" x="160" y="150" width="980" height="720"/>
+  <text class="h" x="650" y="195" text-anchor="middle">2.54mm 独立焊盘洞洞板，可裁剪到约 10 × 8 孔</text>
+
+  <g id="holes">
+    <circle class="hole" cx="245" cy="255" r="11"/><circle class="hole" cx="325" cy="255" r="11"/><circle class="hole" cx="405" cy="255" r="11"/><circle class="hole" cx="485" cy="255" r="11"/><circle class="hole" cx="565" cy="255" r="11"/><circle class="hole" cx="645" cy="255" r="11"/><circle class="hole" cx="725" cy="255" r="11"/><circle class="hole" cx="805" cy="255" r="11"/><circle class="hole" cx="885" cy="255" r="11"/><circle class="hole" cx="965" cy="255" r="11"/><circle class="hole" cx="1045" cy="255" r="11"/>
+    <circle class="hole" cx="245" cy="335" r="11"/><circle class="hole" cx="325" cy="335" r="11"/><circle class="hole" cx="405" cy="335" r="11"/><circle class="hole" cx="485" cy="335" r="11"/><circle class="hole" cx="565" cy="335" r="11"/><circle class="hole" cx="645" cy="335" r="11"/><circle class="hole" cx="725" cy="335" r="11"/><circle class="hole" cx="805" cy="335" r="11"/><circle class="hole" cx="885" cy="335" r="11"/><circle class="hole" cx="965" cy="335" r="11"/><circle class="hole" cx="1045" cy="335" r="11"/>
+    <circle class="hole" cx="245" cy="415" r="11"/><circle class="hole" cx="325" cy="415" r="11"/><circle class="hole" cx="405" cy="415" r="11"/><circle class="hole" cx="485" cy="415" r="11"/><circle class="hole" cx="565" cy="415" r="11"/><circle class="hole" cx="645" cy="415" r="11"/><circle class="hole" cx="725" cy="415" r="11"/><circle class="hole" cx="805" cy="415" r="11"/><circle class="hole" cx="885" cy="415" r="11"/><circle class="hole" cx="965" cy="415" r="11"/><circle class="hole" cx="1045" cy="415" r="11"/>
+    <circle class="hole" cx="245" cy="495" r="11"/><circle class="hole" cx="325" cy="495" r="11"/><circle class="hole" cx="405" cy="495" r="11"/><circle class="hole" cx="485" cy="495" r="11"/><circle class="hole" cx="565" cy="495" r="11"/><circle class="hole" cx="645" cy="495" r="11"/><circle class="hole" cx="725" cy="495" r="11"/><circle class="hole" cx="805" cy="495" r="11"/><circle class="hole" cx="885" cy="495" r="11"/><circle class="hole" cx="965" cy="495" r="11"/><circle class="hole" cx="1045" cy="495" r="11"/>
+    <circle class="hole" cx="245" cy="575" r="11"/><circle class="hole" cx="325" cy="575" r="11"/><circle class="hole" cx="405" cy="575" r="11"/><circle class="hole" cx="485" cy="575" r="11"/><circle class="hole" cx="565" cy="575" r="11"/><circle class="hole" cx="645" cy="575" r="11"/><circle class="hole" cx="725" cy="575" r="11"/><circle class="hole" cx="805" cy="575" r="11"/><circle class="hole" cx="885" cy="575" r="11"/><circle class="hole" cx="965" cy="575" r="11"/><circle class="hole" cx="1045" cy="575" r="11"/>
+    <circle class="hole" cx="245" cy="655" r="11"/><circle class="hole" cx="325" cy="655" r="11"/><circle class="hole" cx="405" cy="655" r="11"/><circle class="hole" cx="485" cy="655" r="11"/><circle class="hole" cx="565" cy="655" r="11"/><circle class="hole" cx="645" cy="655" r="11"/><circle class="hole" cx="725" cy="655" r="11"/><circle class="hole" cx="805" cy="655" r="11"/><circle class="hole" cx="885" cy="655" r="11"/><circle class="hole" cx="965" cy="655" r="11"/><circle class="hole" cx="1045" cy="655" r="11"/>
+    <circle class="hole" cx="245" cy="735" r="11"/><circle class="hole" cx="325" cy="735" r="11"/><circle class="hole" cx="405" cy="735" r="11"/><circle class="hole" cx="485" cy="735" r="11"/><circle class="hole" cx="565" cy="735" r="11"/><circle class="hole" cx="645" cy="735" r="11"/><circle class="hole" cx="725" cy="735" r="11"/><circle class="hole" cx="805" cy="735" r="11"/><circle class="hole" cx="885" cy="735" r="11"/><circle class="hole" cx="965" cy="735" r="11"/><circle class="hole" cx="1045" cy="735" r="11"/>
+  </g>
+
+  <rect class="chip" x="540" y="345" width="250" height="250"/>
+  <text class="h" x="665" y="390" text-anchor="middle">PC817</text>
+  <text class="s" x="665" y="420" text-anchor="middle">缺口朝上</text>
+  <circle class="pin" cx="565" cy="415" r="16"/><text class="pinLabel" x="565" y="421" text-anchor="middle">1</text>
+  <circle class="pin" cx="565" cy="575" r="16"/><text class="pinLabel" x="565" y="581" text-anchor="middle">2</text>
+  <circle class="pin" cx="765" cy="415" r="16"/><text class="pinLabel" x="765" y="421" text-anchor="middle">4</text>
+  <circle class="pin" cx="765" cy="575" r="16"/><text class="pinLabel" x="765" y="581" text-anchor="middle">3</text>
+
+  <rect class="pad" x="214" y="234" width="62" height="42" rx="8"/><text class="s" x="245" y="260" text-anchor="middle">M-GND</text>
+  <rect class="pad" x="214" y="314" width="62" height="42" rx="8"/><text class="s" x="245" y="340" text-anchor="middle">SIDE</text>
+  <rect class="pad" x="214" y="394" width="62" height="42" rx="8"/><text class="s" x="245" y="420" text-anchor="middle">LEFT</text>
+  <text class="t" x="245" y="220" text-anchor="middle">接鼠标</text>
+
+  <rect class="pad" x="1014" y="234" width="62" height="42" rx="8"/><text class="s" x="1045" y="260" text-anchor="middle">GND</text>
+  <rect class="pad" x="1014" y="314" width="62" height="42" rx="8"/><text class="s" x="1045" y="340" text-anchor="middle">GPIO4</text>
+  <rect class="pad" x="1014" y="394" width="62" height="42" rx="8"/><text class="s" x="1045" y="420" text-anchor="middle">GPIO5</text>
+  <text class="t" x="1045" y="220" text-anchor="middle">接 ESP32-S3</text>
+
+  <path class="wire-gnd" d="M245 255 H1045"/>
+  <text class="s" x="650" y="244" text-anchor="middle">GND 公共线：鼠标 GND 与 ESP32 GND 连通</text>
+
+  <rect class="res" x="375" y="305" width="135" height="60"/>
+  <text class="t" x="442" y="329" text-anchor="middle">R1</text>
+  <text class="s" x="442" y="353" text-anchor="middle">47k</text>
+  <path class="wire-side" d="M245 335 H375"/>
+  <path class="wire-side" d="M510 335 H1045"/>
+
+  <rect class="res" x="825" y="385" width="135" height="60"/>
+  <text class="t" x="892" y="409" text-anchor="middle">R2</text>
+  <text class="s" x="892" y="433" text-anchor="middle">470R</text>
+  <path class="wire-drive" d="M1045 415 H960"/>
+  <path class="wire-drive" d="M825 415 H565"/>
+
+  <rect class="res" x="880" y="485" width="135" height="60"/>
+  <text class="t" x="947" y="509" text-anchor="middle">R3</text>
+  <text class="s" x="947" y="533" text-anchor="middle">100k</text>
+  <path class="wire-drive" d="M1045 415 V515 H1015"/>
+  <path class="wire-gnd" d="M880 515 H805 V255"/>
+
+  <path class="wire-left" d="M245 415 H765"/>
+  <path class="wire-gnd" d="M565 575 V255"/>
+  <path class="wire-gnd" d="M765 575 V255"/>
+
+  <rect class="legend" x="1190" y="180" width="240" height="275"/>
+  <text class="h" x="1310" y="220" text-anchor="middle">颜色说明</text>
+  <circle class="gnd" cx="1230" cy="260" r="9"/><text class="s" x="1260" y="266">GND</text>
+  <circle class="side" cx="1230" cy="300" r="9"/><text class="s" x="1260" y="306">侧键信号</text>
+  <circle class="left" cx="1230" cy="340" r="9"/><text class="s" x="1260" y="346">左键信号</text>
+  <circle class="drive" cx="1230" cy="380" r="9"/><text class="s" x="1260" y="386">GPIO5 驱动</text>
+  <text class="s" x="1210" y="430">背面按颜色飞线或焊锡桥</text>
+
+  <rect class="note" x="220" y="910" width="1060" height="94"/>
+  <text class="t" x="750" y="946" text-anchor="middle">这是推荐布局，不是唯一布局。关键是连接关系必须一致。</text>
+  <text class="s" x="750" y="976" text-anchor="middle">如果洞洞板孔位不同，可以按同样的电气连接重新排布；焊完后必须用万用表检查短路和连通。</text>
+</svg>
